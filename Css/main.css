@@ -1,0 +1,308 @@
+    /* Global Rules */
+    
+     :root {
+        --main-color: #2eca7f;
+    }
+    
+    body {
+        padding: 20px;
+        background-color: #eee;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+    
+    ul {
+        list-style: none;
+    }
+    /* Global Rules */
+    /* Start Header */
+    
+    .header {
+        background-color: var(--main-color);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 15px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+    
+    @media (min-width:370px) and (max-width:768px) {
+        .header {
+            display: block;
+        }
+    }
+    
+    .header .info-left {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .header .info-left .logo {
+        margin-right: 15px;
+    }
+    
+    .header .info-left .logo img {
+        width: 70px;
+        border-radius: 50%;
+        border: none;
+        outline: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .header .info-left .info {
+        color: white;
+    }
+    
+    .header .info-left .info h1 {
+        margin: 0 0 3px 0;
+    }
+    
+    .header .info-left .info span {
+        letter-spacing: 1px;
+    }
+    
+    .header .info-right h3 {
+        color: white;
+        font-size: 13px;
+        margin: 0;
+    }
+    
+    @media (min-width:370px) and (max-width:768px) {
+        .header .info-right h3 {
+            text-align: center;
+            padding-top: 20px;
+            font-size: 18px;
+        }
+        .header .info-right ul {
+            justify-content: center;
+        }
+    }
+    
+    .header .info-right ul {
+        display: flex;
+        margin: 0;
+        padding: 0;
+    }
+    
+    @media (min-width:370px) and (max-width:768px) {
+        .header .info-right ul {
+            padding-left: 50px;
+        }
+    }
+    
+    .header .info-right ul li {
+        padding: 10px;
+    }
+    
+    .header .info-right ul li:first-child {
+        padding-left: 0;
+    }
+    
+    .header .info-right ul li a {
+        background-color: white;
+        border-radius: 50%;
+        text-align: center;
+        color: var(--main-color);
+        text-align: center;
+        width: 30px;
+        height: 30px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .header .info-right ul li a i {
+        font-size: 15px;
+    }
+    /* End Header */
+    /* Start Content */
+    
+    .content {
+        background-color: white;
+        padding: 20px 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+    
+    .content .menu ul {
+        padding-left: 30px;
+        border-right: 1px solid #eee;
+    }
+    
+    @media (min-width:370px) and (max-width:768px) {
+        .content {
+            display: block;
+        }
+        .content .menu ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+    
+    .content .menu ul li {
+        padding-bottom: 50px;
+        position: relative;
+    }
+    
+    .content .menu ul li::after {
+        content: "";
+        width: 0;
+        height: 0;
+        position: absolute;
+        background: var(--main-color);
+        left: -30px;
+        top: 9px;
+        transition: 0.3s;
+    }
+    
+    .content .menu ul li:hover::after {
+        width: 20px;
+        height: 2px;
+    }
+    
+    .content .menu ul li a {
+        color: black;
+        font-size: 18px;
+        transition: 0.3;
+    }
+    
+    @media (min-width:370px) and (max-width:768px) {
+        .content .menu ul li a {
+            padding: 10px 14px;
+        }
+    }
+    
+    .content .menu ul li:hover a {
+        color: var(--main-color);
+    }
+    
+    .content .menu ul li a i {
+        margin-right: 10px;
+    }
+    
+    .content .photo {
+        grid-column: 2/5;
+        margin-right: 40px;
+    }
+    
+    .content .photo img {
+        width: 450px;
+    }
+    
+    @media (min-width:375px) and (max-width:870px) {
+        .content .photo img {
+            display: none;
+        }
+    }
+    
+    @media (min-width:871px) and (max-width:1024px) {
+        .content .photo img {
+            width: 350px;
+        }
+    }
+    
+    .content .container {
+        grid-column: 2/7;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    
+    .content .info .who h2 {
+        position: relative;
+        width: fit-content;
+        padding: 10px 0;
+        margin: 0 0 30px 0;
+        border-bottom: 1px solid var(--main-color);
+    }
+    
+    @media (min-width:375px) and (max-width:768px) {
+        .content .info .who h2 {
+            margin: 0px auto;
+        }
+    }
+    
+    .content .info .who h2::before {
+        content: "";
+        width: fit-content;
+        height: 10px;
+        background: var(--main-color);
+        position: absolute;
+        bottom: -6px;
+        width: 44px;
+        border-radius: 20px;
+    }
+    
+    .content .info .who p {
+        max-width: 400px;
+        line-height: 1.6;
+        color: #777;
+    }
+    
+    @media (min-width:871px) and (max-width:1200px) {
+        .content .info .who p {
+            max-width: 250px;
+        }
+    }
+    
+    .content .info .contact .tel,
+    .email,
+    .address,
+    .freelancer {
+        display: flex;
+        align-items: center;
+        margin: 0 0 10px 0;
+    }
+    
+    .content .info .contact .tel h3,
+    .email h3,
+    .address h3,
+    .freelancer h3 {
+        margin: 0;
+    }
+    
+    .content .info .contact .tel span,
+    .email span,
+    .address span,
+    .freelancer span {
+        display: block;
+        margin-left: 10px;
+        color: #777;
+    }
+    
+    .content .info .contact a {
+        display: block;
+        width: fit-content;
+        background-color: var(--main-color);
+        color: white;
+        padding: 15px 20px;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 6px;
+        margin-top: 35px;
+        transition: 0.3s;
+    }
+    
+    @media (min-width:375px) and (max-width:768px) {
+        .content .info .contact a {
+            margin: 30px auto;
+        }
+    }
+    
+    .content .info .contact a:hover {
+        background-color: transparent;
+        color: var(--main-color);
+        border: 1px solid var(--main-color);
+    }
+    /* End Content */
